@@ -23,9 +23,7 @@ const AppRouter = () => {
         <Routes>
           <Route element={<Home />} path="/" />
           <Route
-            element={
-              <Shoes setIsLoading={setIsLoading} setShoeData={setShoeData} />
-            }
+            element={<Shoes setIsLoading={setIsLoading} />}
             path="/shoes"
           />
           <Route element={<AddShoe />} path="/add" />
