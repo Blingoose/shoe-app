@@ -1,17 +1,22 @@
-import React from "react";
-// import { getData } from "../utils/api";
+import React, { useState, useEffect } from "react";
+import { getData } from "../utils/api";
 
-const Shoes = () => {
-  //   const [shoeList, setShoeList] = useState([]);
-  //   const [errMsg, setErrMsg] = useState(false);
+const Shoes = ({ setIsLoading, setShoeData }) => {
+  const [shoeList, setShoeList] = useState([]);
+  const [errMsg, setErrMsg] = useState(false);
 
-  //   useEffect(() => {
-  //     const data = getData;
-  //   }, []);
+  useEffect(() => {
+    setIsLoading(true);
+    getData(
+      "https://6374aad208104a9c5f858122.mockapi.io/shoes",
+      setShoeList,
+      setErrMsg,
+      setIsLoading
+    );
+  }, [setIsLoading]);
+  console.log(shoeList);
   return (
-    <div>
-      <h2>List of Shoes</h2>
-    </div>
+    <div>{errMsg !== null ? <p>{errMsg.message}</p> : <h1>{"hi"}</h1>}</div>
   );
 };
 

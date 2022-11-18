@@ -7,7 +7,7 @@ import { regular } from "@fortawesome/fontawesome-svg-core/import.macro"; // <--
 const Header = () => {
   return (
     <header>
-      <h1>Shoe App</h1>
+      <h1 className="header-heading">Shoe App</h1>
       <hr />
       <div className="links">
         <NavLink to="/" activeclassname="active">
@@ -20,14 +20,14 @@ const Header = () => {
         <NavLink to="/shoes" activeclassname="active">
           Shoe List
           <FontAwesomeIcon
-            style={{ margin: "5px 0 2px 5px" }}
+            style={{ margin: "5px 0 0.5px 5px" }}
             icon={regular("square-list")}
           />
         </NavLink>
         <NavLink to="/add" activeclassname="active">
           Add Shoe
           <FontAwesomeIcon
-            style={{ margin: "5px 0 2px 5px" }}
+            style={{ margin: "5px 0 0.5px 5px" }}
             icon={regular("plus")}
           />
         </NavLink>

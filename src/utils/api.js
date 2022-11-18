@@ -1,8 +1,10 @@
 import axios from "axios";
-export const getData = async (url, setErrMsg, id) => {
+export const getData = async (url, setFunc, setErrMsg, setIsLoading, id) => {
   try {
-    await axios.get(url);
+    const { data } = await axios.get(url);
+    setFunc(data);
   } catch (error) {
     setErrMsg(error);
   }
+  setIsLoading(false);
 };
