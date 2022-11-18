@@ -9,7 +9,7 @@ import "../styles/Spinner.css";
 
 const AppRouter = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [shoeData, setShoeData] = useState([]);
+  // const [shoeData, setShoeData] = useState([]);
   return (
     <div>
       <Header />
