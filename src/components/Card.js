@@ -6,8 +6,10 @@ const Card = ({ data }) => {
     <div className="card-container">
       <div className="card-box">
         <img className="img" src={`${data.img}`} alt={data.type} />
-        <h4>{data.type}</h4>
-        <p>{data.price}</p>
+        <div className="details-container">
+          <h4 className="brand">Brand - {data.type}</h4>
+          <p className="price">Price - {data.price}</p>
+        </div>
       </div>
     </div>
   );

@@ -81,7 +81,4 @@ header {
   .abc.active {
     background-color: #333b46;
   }
-  .abc:hover {
-    background-color: #c3cde5;
-  }
 }

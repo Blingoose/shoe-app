@@ -3,7 +3,6 @@
   height: 60vh;
   display: flex;
   /* align-items: center; */
-  /* flex-direction: column; */
   margin-bottom: 100px;
   text-align: center;
   justify-content: space-around;
@@ -16,7 +15,7 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-
+  border-radius: 5px;
   /* margin-bottom: 100px; */
   background-color: bisque;
 }
@@ -27,10 +26,58 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  /* flex-direction: column; */
+}
+
+.details-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.brand {
+  font-size: 24px;
+}
+
+.price {
+  font-size: 20px;
 }
 
 .img {
   width: 40vw;
   height: 40vh;
   object-fit: cover;
+}
+
+@media screen and (max-width: 700px) {
+  .img {
+    width: 40vw;
+    height: 40vh;
+    object-fit: cover;
+  }
+  .brand {
+    font-size: 20px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .img {
+    width: 60vw;
+    height: 60vh;
+    object-fit: cover;
+  }
+
+  .card-box {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
 }

@@ -32,7 +32,7 @@ const Shoes = ({ setIsLoading, isLoading, setShoeData }) => {
     return shoeList.map((shoe) => {
       return (
         <div className="container" key={shoe.id}>
-          <Link to={`${shoe.id}`}>
+          <Link style={{ textDecoration: "none" }} to={`${shoe.id}`}>
             <Card data={shoe} />
           </Link>
         </div>
