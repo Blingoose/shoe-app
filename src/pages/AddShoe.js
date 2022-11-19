@@ -1,5 +1,5 @@
 import React from "react";
-import BookForm from "../components/BookForm";
+import ShoeForm from "../components/ShoeForm";
 
 const AddShoe = () => {
   const handleOnSubmit = (book) => {
@@ -8,7 +8,7 @@ const AddShoe = () => {
 
   return (
     <React.Fragment>
-      <BookForm handleOnSubmit={handleOnSubmit} />
+      <ShoeForm handleOnSubmit={handleOnSubmit} />
     </React.Fragment>
   );
 };

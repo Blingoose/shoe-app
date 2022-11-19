@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Card from "../components/Card";
 import { getData } from "../utils/api";
+import "../styles/Shoes.css";
 
-const Shoes = ({ setIsLoading, setShoeData }) => {
+const Shoes = ({ setIsLoading, isLoading, setShoeData }) => {
   const [shoeList, setShoeList] = useState([]);
   const [errMsg, setErrMsg] = useState(false);
 
@@ -9,14 +12,38 @@ const Shoes = ({ setIsLoading, setShoeData }) => {
     setIsLoading(true);
     getData(
       "https://6374aad208104a9c5f858122.mockapi.io/shoes",
-      setShoeList,
+      setIsLoading,
       setErrMsg,
-      setIsLoading
+      setShoeList
     );
   }, [setIsLoading]);
-  console.log(shoeList);
+
+  useEffect(() => {
+    setShoeData((prev) => {
+      const res = {};
+      shoeList.forEach((e) => {
+        res[e.id] = e;
+      });
+      return { ...prev, ...res };
+    });
+  }, [setShoeData, shoeList]);
+
+  const insertShoes = () => {
+    return shoeList.map((shoe) => {
+      return (
+        <div className="container" key={shoe.id}>
+          <Link to={`${shoe.id}`}>
+            <Card data={shoe} />
+          </Link>
+        </div>
+      );
+    });
+  };
+
   return (
-    <div>{errMsg !== null ? <p>{errMsg.message}</p> : <h1>{"hi"}</h1>}</div>
+    { isLoading } && (
+      <div>{errMsg ? <p>{errMsg.message}</p> : <div>{insertShoes()}</div>}</div>
+    )
   );
 };
 

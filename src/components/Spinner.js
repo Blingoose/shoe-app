@@ -4,10 +4,10 @@ import "../styles/Spinner.css";
 const Spinner = () => {
   return (
     <div>
-      <div class="circles-row2">
-        <div class="c4"></div>
-        <div class="c5"></div>
-        <div class="c6"></div>
+      <div className="circles-row2">
+        <div className="c4"></div>
+        <div className="c5"></div>
+        <div className="c6"></div>
       </div>
     </div>
   );

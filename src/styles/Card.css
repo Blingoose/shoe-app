@@ -1,0 +1,36 @@
+.container {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  /* align-items: center; */
+  /* flex-direction: column; */
+  margin-bottom: 100px;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.card-container {
+  width: 70vw;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  /* margin-bottom: 100px; */
+  background-color: bisque;
+}
+
+.card-box {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.img {
+  width: 40vw;
+  height: 40vh;
+  object-fit: cover;
+}

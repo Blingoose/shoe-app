@@ -1,10 +1,22 @@
 import axios from "axios";
-export const getData = async (url, setFunc, setErrMsg, setIsLoading, id) => {
+export const getData = async (url, setIsLoading, setErrMsg, setFunc) => {
   try {
     const { data } = await axios.get(url);
-    setFunc(data);
+    setFunc !== undefined ? setFunc(data) : (setFunc = undefined);
   } catch (error) {
-    setErrMsg(error);
+    setErrMsg !== undefined ? setErrMsg(error) : (setErrMsg = undefined);
   }
-  setIsLoading(false);
+  setIsLoading !== undefined ? setIsLoading(false) : (setIsLoading = undefined);
+};
+
+export const deleteData = async (url) => {
+  await axios.delete(url);
+};
+
+export const addData = (url, userData) => {
+  axios.post(url, userData);
+};
+
+export const updateData = (url, data) => {
+  axios.put(url, data);
 };
