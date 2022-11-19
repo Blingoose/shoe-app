@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header>
       <h1 className="header-heading">Shoe App</h1>
-      <hr />
+      <hr className="hr" />
       <div className="links">
         <NavLink className={"abc"} to="/" activeclassname="active">
           Home

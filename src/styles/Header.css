@@ -3,17 +3,18 @@ header {
   margin: 10px 0 60px 0;
 }
 
-.abc {
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 150%;
+.header-heading {
   margin-bottom: 20px;
+}
+
+.hr {
+  margin-bottom: 10px;
 }
 
 .links {
   text-transform: uppercase;
   text-align: center;
-  font-size: 150%;
+  font-size: 170%;
   margin-bottom: 20px;
 }
 
@@ -26,7 +27,7 @@ header {
   color: rgb(255, 102, 0);
   text-decoration: none;
   text-transform: uppercase;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -40,30 +41,47 @@ header {
 
 .abc:hover,
 .abc.active {
-  border-bottom: 2px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
 }
 
-.header-heading {
-  text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85,
-    -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606,
-    0 -80px 70px #973716, 10px -90px 80px #451b0e;
-  display: inline-block;
+@media screen and (max-width: 700px) {
+  .links {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 120%;
+    margin-bottom: 20px;
+  }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .abc,
   .links {
+    margin: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
     font-size: 1rem;
     width: 100%;
+    font-size: 100%;
     color: #333b46;
     font-weight: 500;
   }
 
   .abc:link,
-  .abc:visited,
+  .abc:hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+    padding: 0;
+    margin: 0px;
+    border: none;
+  }
   .abc.active {
-    margin: 0 30px;
+    background-color: #333b46;
+  }
+  .abc:hover {
+    background-color: #c3cde5;
   }
 }

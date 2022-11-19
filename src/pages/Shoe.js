@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getData } from "../utils/api";
 import { deleteData } from "../utils/api";
 import { updateData } from "../utils/api";
+import "../styles/Shoe.css";
 
 const Shoe = ({ setIsLoading }) => {
   const url = "https://6374aad208104a9c5f858122.mockapi.io/shoes";
@@ -129,17 +130,18 @@ const Shoe = ({ setIsLoading }) => {
       </form>
     </div>
   ) : (
-    <div>
-      {errMsg && <p className="errorMsg">{errMsg}</p>}
+    <div className="shoe-container">
       <h3>{shoeData.type}</h3>
       <h3>{shoeData.price}</h3>
-      <img
-        style={{ width: "200px", height: "200px" }}
-        src={shoeData.img}
-        alt={shoeData.type}
-      ></img>
-      <button onClick={changeEditMode}>Edit</button>
-      <button onClick={handleDelete}>Delete</button>
+      <img className="shoe-img" src={shoeData.img} alt={shoeData.type}></img>
+      <div className="edit-delete-container">
+        <button className="btn" onClick={changeEditMode}>
+          Edit
+        </button>
+        <button className="btn" onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
     </div>
   );
 };
