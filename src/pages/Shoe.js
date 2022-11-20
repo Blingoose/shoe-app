@@ -4,7 +4,7 @@ import { getData } from "../utils/api";
 import { deleteData } from "../utils/api";
 import { updateData } from "../utils/api";
 import "../styles/Shoe.css";
-import "../styles/ShoeEdit.css";
+import "../styles/ShoeAdd-Edit.css";
 
 const Shoe = ({ setIsLoading }) => {
   const url = "https://6374aad208104a9c5f858122.mockapi.io/shoes";
@@ -89,7 +89,9 @@ const Shoe = ({ setIsLoading }) => {
       {errMsg && <p className="errorMsg">{errMsg}</p>}
       <form className="edit-form" onSubmit={handleUpdate}>
         <div className="input-label-cont">
-          <label htmlFor="type">Type</label>
+          <label className="label-control" htmlFor="type">
+            Type
+          </label>
           <input
             className="input-control"
             type="type"
@@ -100,7 +102,9 @@ const Shoe = ({ setIsLoading }) => {
         </div>
 
         <div className="input-label-cont">
-          <label htmlFor="price">Price</label>
+          <label className="label-control" htmlFor="price">
+            Price
+          </label>
           <input
             className="input-control"
             type="price"
@@ -111,7 +115,7 @@ const Shoe = ({ setIsLoading }) => {
         </div>
 
         <div className="input-label-cont">
-          <label>Image</label>
+          <label className="label-control">Image</label>
           <input
             // id="quantity"
             className="input-control"
@@ -122,11 +126,14 @@ const Shoe = ({ setIsLoading }) => {
             onChange={handleInputChange}
           ></input>
         </div>
-
-        <button type="submit" className="submit-btn">
-          Submit
-        </button>
-        <button onClick={changeEditMode}>Cancel</button>
+        <div className="submit-cancel-container">
+          <button className="btn" type="submit">
+            Submit
+          </button>
+          <button className="btn" onClick={changeEditMode}>
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   ) : (

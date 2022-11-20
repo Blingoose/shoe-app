@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import React, { useState } from "react";
 import { addData } from "../utils/api";
+import "../styles/ShoeAdd-Edit.css";
 
 const ShoeForm = () => {
   const [errMsg, setErrMsg] = useState("");
@@ -67,38 +68,48 @@ const ShoeForm = () => {
   };
 
   return (
-    <div>
+    <div className="main-edit-form">
       {errMsg && <p className="errorMsg">{errMsg}</p>}
-      <h1>Add Shoe</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="type">
-          Type
+      <form className="edit-form" onSubmit={handleSubmit}>
+        <div className="input-label-cont">
+          <label className="label-control" htmlFor="type">
+            Type
+          </label>
           <input
+            className="input-control"
             type="type"
             name="type"
             value={data.type}
             onChange={handleInputChange}
           />
-        </label>
-        <label htmlFor="price">
-          Price
+        </div>
+        <div className="input-label-cont">
+          <label className="label-control" htmlFor="price">
+            Price
+          </label>
           <input
+            className="input-control"
             type="price"
             name="price"
             value={data.price}
             onChange={handleInputChange}
           />
-        </label>
-        <label htmlFor="img">
-          Img
+        </div>
+        <div className="input-label-cont">
+          <label className="label-control" htmlFor="img">
+            Image
+          </label>
           <input
+            className="input-control"
             type="input"
             name="img"
             value={data.img}
             onChange={handleInputChange}
           />
-        </label>
-        <button type="submit">Add Item</button>
+        </div>
+        <button className="btn" type="submit">
+          Add Item
+        </button>
       </form>
     </div>
   );

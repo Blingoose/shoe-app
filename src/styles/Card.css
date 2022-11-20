@@ -17,7 +17,8 @@
   text-align: center;
   border-radius: 5px;
   /* margin-bottom: 100px; */
-  background-color: bisque;
+  background-color: #fb929e;
+  color: white;
 }
 
 .card-box {
@@ -77,14 +78,15 @@
   }
 
   .img {
-    width: 60vw;
+    margin-top: 10px;
+    width: 50vw;
     height: 40vh;
     object-fit: cover;
     margin-bottom: 10px;
   }
   .brand {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 
   .price {

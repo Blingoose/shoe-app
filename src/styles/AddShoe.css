@@ -1,0 +1,16 @@
+.add-form-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-form {
+  /* background-color: antiquewhite; */
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

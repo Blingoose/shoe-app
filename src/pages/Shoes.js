@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import { getData } from "../utils/api";
-import "../styles/Shoes.css";
 
 const Shoes = ({ setIsLoading, isLoading, setShoeData }) => {
   const [shoeList, setShoeList] = useState([]);
