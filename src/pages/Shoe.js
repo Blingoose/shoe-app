@@ -4,6 +4,7 @@ import { getData } from "../utils/api";
 import { deleteData } from "../utils/api";
 import { updateData } from "../utils/api";
 import "../styles/Shoe.css";
+import "../styles/ShoeEdit.css";
 
 const Shoe = ({ setIsLoading }) => {
   const url = "https://6374aad208104a9c5f858122.mockapi.io/shoes";
@@ -84,37 +85,36 @@ const Shoe = ({ setIsLoading }) => {
   };
 
   return isInEditMode ? (
-    <div className="main-form">
+    <div className="main-edit-form">
       {errMsg && <p className="errorMsg">{errMsg}</p>}
-      <form onSubmit={handleUpdate}>
-        <div>
-          <label htmlFor="type">
-            Type
-            <input
-              type="type"
-              name="type"
-              defaultValue={shoeData.type}
-              onChange={handleInputChange}
-            />
-          </label>
+      <form className="edit-form" onSubmit={handleUpdate}>
+        <div className="input-label-cont">
+          <label htmlFor="type">Type</label>
+          <input
+            className="input-control"
+            type="type"
+            name="type"
+            defaultValue={shoeData.type}
+            onChange={handleInputChange}
+          />
         </div>
 
-        <div>
-          <label htmlFor="price">
-            Price
-            <input
-              type="price"
-              name="price"
-              value={shoeData.price}
-              onChange={handleInputChange}
-            />
-          </label>
+        <div className="input-label-cont">
+          <label htmlFor="price">Price</label>
+          <input
+            className="input-control"
+            type="price"
+            name="price"
+            value={shoeData.price}
+            onChange={handleInputChange}
+          />
         </div>
 
-        <div>
+        <div className="input-label-cont">
           <label>Image</label>
           <input
             // id="quantity"
+            className="input-control"
             type="text"
             name="img"
             defaultValue={shoeData.img}
@@ -131,8 +131,8 @@ const Shoe = ({ setIsLoading }) => {
     </div>
   ) : (
     <div className="shoe-container">
-      <h3>{shoeData.type}</h3>
-      <h3>{shoeData.price}</h3>
+      <h3 className="shoe-brand">Brand - {shoeData.type}</h3>
+      <h4 className="shoe-price">Price - {shoeData.price}</h4>
       <img className="shoe-img" src={shoeData.img} alt={shoeData.type}></img>
       <div className="edit-delete-container">
         <button className="btn" onClick={changeEditMode}>

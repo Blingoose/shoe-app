@@ -1,0 +1,38 @@
+.main-edit-form {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.edit-form {
+  height: 350px;
+  width: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.input-label-cont {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.input-control {
+  height: 50px;
+  width: 300px;
+  border-radius: 2px;
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

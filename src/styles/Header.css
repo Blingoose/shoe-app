@@ -54,6 +54,13 @@ header {
 }
 
 @media screen and (max-width: 500px) {
+  header {
+    margin-bottom: 40px;
+  }
+  .header-heading {
+    margin-bottom: 18px;
+  }
+
   .abc,
   .links {
     margin: 0;
